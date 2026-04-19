@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apps for Artists</title>
+<meta name="description" content="Free, artist-led tools built in direct response to what working artists asked for — privacy-first event hosting, protection from AI scrapers, free grants and opportunities, and more.">
+<meta property="og:title" content="Apps for Artists">
+<meta property="og:description" content="Free tools built in direct response to what working artists asked for.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://appsforartists.org">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext y='19' font-size='20'%3E✦%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #faf8f4;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e4e0d8;
+    --accent: #5a3a2e;
+    --live: #3a7a52;
+    --wip: #9c7a2e;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 72px 28px 96px;
+  }
+
+  /* Hero */
+  header.hero {
+    margin-bottom: 72px;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 20px;
+    font-weight: 500;
+  }
+
+  h1 {
+    font-family: "Iowan Old Style", "Palatino", Georgia, "Times New Roman", serif;
+    font-size: 44px;
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin: 0 0 24px;
+  }
+
+  .lede {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .lede em {
+    font-family: "Iowan Old Style", "Palatino", Georgia, serif;
+  }
+
+  .sub {
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 60ch;
+  }
+
+  /* Section */
+  section {
+    margin-bottom: 72px;
+  }
+
+  h2 {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin: 0 0 4px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section-note {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 14px 0 28px;
+    max-width: 56ch;
+  }
+
+  /* Project list */
+  .projects {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .project {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .project:last-child { border-bottom: none; }
+
+  .project-head {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin-bottom: 8px;
+  }
+
+  .project h3 {
+    font-family: "Iowan Old Style", "Palatino", Georgia, serif;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+
+  .project h3 a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 140ms ease;
+  }
+
+  .project h3 a:hover,
+  .project h3 a:focus { border-bottom-color: var(--ink); }
+
+  .project .domain {
+    color: var(--muted);
+    font-size: 14px;
+    font-family: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  .project .domain a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+
+  .project .domain a:hover { border-bottom-color: var(--muted); }
+
+  .status {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .status.live { color: var(--live); background: rgba(58, 122, 82, 0.1); }
+  .status.wip  { color: var(--wip);  background: rgba(156, 122, 46, 0.1); }
+
+  .project .pitch {
+    font-style: italic;
+    color: var(--muted);
+    margin: 4px 0 10px;
+    font-family: "Iowan Old Style", "Palatino", Georgia, serif;
+  }
+
+  .project p.desc {
+    margin: 8px 0 0;
+    color: #333;
+  }
+
+  /* Support block */
+  .support {
+    margin-top: 96px;
+    padding: 36px 32px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+  }
+
+  .support h3 {
+    font-family: "Iowan Old Style", "Palatino", Georgia, serif;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 0 12px;
+  }
+
+  .support p {
+    margin: 0 0 10px;
+    color: #333;
+  }
+
+  .support a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+  }
+
+  footer a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--muted);
+  }
+
+  /* Responsive */
+  @media (max-width: 560px) {
+    .wrap { padding: 48px 22px 72px; }
+    h1 { font-size: 34px; }
+    .lede { font-size: 17px; }
+    .project h3 { font-size: 21px; }
+    .support { padding: 28px 22px; }
+  }
+
+  /* Dark mode (system) */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141311;
+      --ink: #ece8e0;
+      --muted: #9b978e;
+      --line: #2c2a26;
+      --accent: #d4a88c;
+      --live: #8fc9a7;
+      --wip: #d4b57a;
+    }
+    .support { background: #1c1a17; }
+    .project p.desc { color: #c8c4bc; }
+    .support p { color: #c8c4bc; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">Apps for Artists</p>
+    <h1>Free tools built in direct response to what working artists asked for.</h1>
+    <p class="lede">
+      Artists have been articulating the problem for years, often without the technical vocabulary to name it: consumer technology is built to extract from them &mdash; their attention, their identity, their work. These tools translate those demands into working models of what the alternative looks like. Privacy-first event hosting. Protection from AI scrapers. Grants and opportunities pulled out from behind paywalls and algorithms.
+    </p>
+    <p class="sub">
+      All free. All artist-led. <em>Demand. Translate. Share.</em>
+    </p>
+  </header>
+
+  <section id="apps">
+    <h2>Apps</h2>
+    <p class="section-note">Products built and maintained by the collective. Some are live; others are in active development.</p>
+
+    <ul class="projects">
+
+      <li class="project">
+        <div class="project-head">
+          <h3><a href="https://artistsbay.org" rel="noopener">Artists Bay</a></h3>
+          <span class="domain"><a href="https://artistsbay.org" rel="noopener">artistsbay.org</a></span>
+          <span class="status live">Live</span>
+        </div>
+        <p class="pitch">&ldquo;Arts funding for everyone.&rdquo;</p>
+        <p class="desc">A free, curated database of grants, fellowships, residencies, and commissions &mdash; hundreds of opportunities from organizations worldwide, updated daily. Filtering runs locally in the browser, so personal criteria (region, discipline, identity, deadline) never leave your device. Built by an artist, for artists.</p>
+      </li>
+
+      <li class="project">
+        <div class="project-head">
+          <h3><a href="https://privateparty.app" rel="noopener">Private Party</a></h3>
+          <span class="domain"><a href="https://privateparty.app" rel="noopener">privateparty.app</a></span>
+          <span class="status live">Live</span>
+        </div>
+        <p class="pitch">&ldquo;Party like it&rsquo;s nobody&rsquo;s business.&rdquo;</p>
+        <p class="desc">An event platform with end-to-end encrypted guest data. No phone number required to RSVP. No CSV export of guest lists. No marketing afterlife &mdash; data expires, guests opt out anytime. Designed for hosts who don&rsquo;t want to hand their guests&rsquo; information to platforms with documented surveillance ties.</p>
+      </li>
+
+      <li class="project">
+        <div class="project-head">
+          <h3><a href="https://foxgloveapp.com" rel="noopener">Foxglove</a></h3>
+          <span class="domain"><a href="https://foxgloveapp.com" rel="noopener">foxgloveapp.com</a></span>
+          <span class="status live">Live</span>
+        </div>
+        <p class="pitch">&ldquo;Beautiful to humans. Poison for machines.&rdquo;</p>
+        <p class="desc">Protects artists&rsquo; work from AI training scrapers. Strips identifying metadata (EXIF, GPS, device fingerprints), embeds invisible ownership watermarks through steganography, and applies adversarial perturbations designed to corrupt AI models that ingest the image without consent. Runs entirely on your device; nothing is uploaded.</p>
+      </li>
+
+      <li class="project">
+        <div class="project-head">
+          <h3>InfectID</h3>
+          <span class="domain">In development</span>
+          <span class="status wip">In progress</span>
+        </div>
+        <p class="pitch">Identity protection for artists in the age of AI ingestion.</p>
+        <p class="desc">Extends the Foxglove protection model from artworks to the artist themselves &mdash; targeting the pipelines that scrape and profile creators alongside their work. Built as a companion tool to Foxglove for artists whose presence online needs to coexist with refusal of nonconsensual data capture.</p>
+      </li>
+
+      <li class="project">
+        <div class="project-head">
+          <h3>3Do</h3>
+          <span class="domain"><a href="https://3doapp.com" rel="noopener">3doapp.com</a></span>
+          <span class="status wip">In progress</span>
+        </div>
+        <p class="pitch">Template-based mobile 3D modeling for 3D printing.</p>
+        <p class="desc">Gets artists from idea to printable model on a phone, without the learning curve of desktop CAD. Designed for the maker who wants to sketch, iterate, and send a file to a local 3D printer in an afternoon.</p>
+      </li>
+
+      <li class="project">
+        <div class="project-head">
+          <h3>MockDrop</h3>
+          <span class="domain">In development</span>
+          <span class="status wip">In progress</span>
+        </div>
+        <p class="pitch">Mobile apparel mockup generator with a social gallery.</p>
+        <p class="desc">Preview designs on shirts, hoodies, and merchandise before committing to a print run &mdash; and share drops with a community of other makers. Built so independent artists can move from rough idea to salable product without a desktop design suite.</p>
+      </li>
+
+    </ul>
+  </section>
+
+  <section id="portfolios">
+    <h2>Portfolios</h2>
+    <p class="section-note">Artist websites built through the same practice &mdash; fast static sites, no tracking, artist-owned.</p>
+
+    <ul class="projects">
+
+      <li class="project">
+        <div class="project-head">
+          <h3><a href="https://shervintattoo.com" rel="noopener">Shervin Tattoo</a></h3>
+          <span class="domain"><a href="https://shervintattoo.com" rel="noopener">shervintattoo.com</a></span>
+          <span class="status live">Live</span>
+        </div>
+        <p class="desc">Portfolio, shop, and intake system for San Francisco&ndash;based Iranian American tattooer Shervin, whose practice spans traditional, Persian, Japanese, illustrative, and blackwork styles. Four-step booking flow, gallery of finished work, and a merchandise shop.</p>
+      </li>
+
+      <li class="project">
+        <div class="project-head">
+          <h3><a href="https://monkeyman.io" rel="noopener">MonkeyMan</a></h3>
+          <span class="domain"><a href="https://monkeyman.io" rel="noopener">monkeyman.io</a></span>
+          <span class="status live">Live</span>
+        </div>
+        <p class="desc">Portfolio site for Oakland DJ and selector MonkeyMan &mdash; house, funk, and soul. Performance photography, streaming links (SoundCloud, Twitch, YouTube), venue history, booking form, and downloadable press kit.</p>
+      </li>
+
+      <li class="project">
+        <div class="project-head">
+          <h3>Sierra</h3>
+          <span class="domain">Coming soon</span>
+          <span class="status wip">In progress</span>
+        </div>
+        <p class="desc">Portfolio site currently in development.</p>
+      </li>
+
+    </ul>
+  </section>
+
+  <aside class="support">
+    <h3>Enjoying these free tools?</h3>
+    <p>Every app here is built and maintained independently and released free for artists. If the work is useful to you, you can support the maker &mdash; or just say hello &mdash; at <a href="https://cweird.com" rel="noopener">cweird.com</a>.</p>
+    <p>Questions, feedback, or something to build together? <a href="mailto:info@cweird.com">info@cweird.com</a>.</p>
+  </aside>
+
+  <footer>
+    <span>appsforartists.org</span>
+    <span><a href="mailto:info@cweird.com">info@cweird.com</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
