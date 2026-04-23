@@ -18,7 +18,7 @@ Owner: c.weird (Christopher Weir), info@cweird.com. Domain registered at **Namec
 - **Static, single file.** No build step, no bundler, no JS. System fonts only — nothing fetched from third-party CDNs (keeps faith with the privacy narrative of the tools showcased).
 - **Clean & minimal aesthetic.** Serif display headings (`Iowan Old Style / Palatino / Georgia`), sans body. Off-white / warm background. Respects `prefers-color-scheme: dark`.
 - **Two sections:** Apps (Artists Bay, Private Party, Foxglove, InfectID, 3Do, MockDrop) + Portfolios (Shervin Tattoo, MonkeyMan, Sierra).
-- **Voice:** echoes the LACMA grant draft — *"Demand. Translate. Share." / "tools that respect rather than extract from artists."* Keep the site itself unbranded; the only nod to the maker is a minimal "Enjoying these free tools?" block linking to cweird.com.
+- **Voice:** echoes the LACMA grant draft — *"Listen. Translate. Share." / "tools that respect rather than extract from artists."* Keep the site itself unbranded; the only nod to the maker is a minimal "Enjoying these free tools?" block linking to cweird.com.
 
 ## Deployment target
 
